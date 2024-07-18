@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>M.R. Live TV</title>  
+        <!-- Include hls.js from a CDN -->
+        <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
+        
+    </head>
+    <body>
+        <!-- HTML5 Video Tag -->
+        <video id="video" 
+               width='100%' height='500px' controls autoplay
+               src="http://113.212.111.246:8080/hls/col12.m3u8
+
+">
+        </video>
+        <!-- Invocation Script -->
+        <script>
+            if (Hls.isSupported()) {
+              var video = document.getElementById('video');
+              var hls = new Hls();
+              hls.loadSource(video.src);
+              hls.attachMedia(video);
+            }else{
+                alert("Cannot stream HLS, use another video source");
+            }
+        </script>
+    </body>
+</html>
